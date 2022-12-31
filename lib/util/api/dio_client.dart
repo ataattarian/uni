@@ -20,7 +20,7 @@ class DioClient {
     print("1");
     try {
       print("2");
-      Response response = await _dio.post('$_baseUrl/user/login/',
+      Response response = await _dio.post('\$_baseUrl/user/login/',
           data: {'username': username, 'password': password},
           options: _options).timeout(const Duration(seconds: 15));
       CurrentData.user.fromJsonLogin(

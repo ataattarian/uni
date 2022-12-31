@@ -8,7 +8,7 @@ import 'package:photo_shop/util/constants/current_data.dart';
 
 class DioClient {
   final Dio _dio = Dio();
-  final _baseUrl = '65.108.158.161:1337';
+  final _baseUrl = 'http://65.108.158.161:1337';
   final _options = Options(headers: {
     "Accept": "application/json",
     "Access-Control_Allow_Origin": "*"

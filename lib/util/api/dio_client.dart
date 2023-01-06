@@ -12,7 +12,10 @@ class DioClient {
   final _baseUrl = 'https://api.tempservice.ir';
   final _options = Options(headers: {
     "Accept": "application/json",
-    "Access-Control_Allow_Origin": "*"
+    "Access-Control_Allow_Origin": "*",
+    "Access-Control-Allow-Headers":"Content-Type",
+    "Access-Control-Resuest-Method": "GET, POST, PUT, OPTIONS",
+    "Referrer-Policy":"no-referrer-when-downgrade"
   });
 
   Future<int?> login(
@@ -20,7 +23,7 @@ class DioClient {
     print("1");
     try {
       print("2");
-      Response response = await _dio.post('\$_baseUrl/user/login/',
+      Response response = await _dio.post('$_baseUrl/user/login/',
           data: {'username': username, 'password': password},
           options: _options).timeout(const Duration(seconds: 15));
       CurrentData.user.fromJsonLogin(
